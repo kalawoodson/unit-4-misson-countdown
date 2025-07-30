@@ -1,4 +1,63 @@
 html, body {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+}
+
+header {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(45deg, #ff0000, #ff4444);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: olivedrab, ridge, 1rem;
+}
+
+/* Fallback for browsers that don't support background-clip */
+@supports not (-webkit-background-clip: text) {
+    header {
+        color: #ff0000;
+        text-shadow: 
+            0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 20px rgba(255, 0, 0, 0.6),
+            0 0 30px rgba(255, 0, 0, 0.4);
+    }
+}
+
+main {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff0000, #ff4444);
+    color: white;
+    border: olivedrab, thick, ridge;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
