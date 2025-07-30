@@ -57,6 +57,22 @@ button {
     transition: all 0.3s ease;
 }
 
+button.countdown-complete {
+    background: linear-gradient(45deg, #00ff00, #44ff44);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+}
+
+button.countdown-active {
+    background: linear-gradient(45deg, #ffa500, #ffcc44);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
 button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);

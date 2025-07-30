@@ -39,6 +39,9 @@ startTimeoutBtn.addEventListener('click',function() {
 startIntervalBtn.addEventListener('click', function() {
     let count = 5;
     
+    // Add active class when countdown starts
+    startIntervalBtn.classList.add('countdown-active');
+    
     const intervalTimer = setInterval(function() {
         intervalDisplay.textContent = count;
         // Play beep sound for countdown numbers
@@ -54,6 +57,12 @@ startIntervalBtn.addEventListener('click', function() {
         if (count < 0) {
             intervalDisplay.textContent = "GO!";
             clearInterval(intervalTimer);
+            
+            // Change button appearance when countdown completes
+            startIntervalBtn.classList.remove('countdown-active');
+            startIntervalBtn.classList.add('countdown-complete');
         }
     }, 1000);
+
+    
 });
