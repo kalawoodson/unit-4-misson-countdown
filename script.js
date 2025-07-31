@@ -58,7 +58,19 @@ startIntervalBtn.addEventListener('click', function() {
             intervalDisplay.textContent = "GO!";
             clearInterval(intervalTimer);
             
-            // Change button appearance when countdown completes
+            // REQUIRED: Nested timer implementation
+            let index = 0;
+            const repeatTimer = setInterval(function() {
+                repeatGoArray[index].textContent = "GO!";
+                 createBeep(1200, 500); // Higher pitch, longer duration
+                index++;
+                
+                if (repeatGoArray[index] === undefined) {
+                    clearInterval(repeatTimer);
+                }
+            }, 1000);
+            
+            // Button styling
             startIntervalBtn.classList.remove('countdown-active');
             startIntervalBtn.classList.add('countdown-complete');
         }
